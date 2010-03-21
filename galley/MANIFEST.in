@@ -1,3 +1,0 @@
-include galley/config/deployment.ini_tmpl
-recursive-include galley/public *
-recursive-include galley/templates *
