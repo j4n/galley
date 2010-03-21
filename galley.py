@@ -8,6 +8,13 @@
 # * align next-up-prev
 # * design: film-like
 # * prefetch
+# * css: opera-bug: leftmost hover-label does not hover away
+# * improve scaling quality
+# * exiv-infos
+# * next-buttons-positions-bug
+# * pagination?
+# * slide-show-fullscreen-mode
+# * caching
 
 import Image
 from StringIO import StringIO
