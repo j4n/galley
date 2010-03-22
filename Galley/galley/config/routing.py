@@ -23,6 +23,8 @@ def make_map():
     map.connect('/{controller}/{action}/{id}')
     #map.connect("/{filename:.*.?}", controller='view', action='index')
     # match all filenames for direct view
+    map.connect("/raw/{filename}", requirements={"filename": R".*?"}, controller='view', action='render_raw_file')
+    map.connect("/resize/{resize}/{filename}", requirements={"filename": R".*?"}, controller='view', action='render_resized_file')
     map.connect("/{filename}", requirements={"filename": R".*?"}, controller='view', action='index')
     #map.connect("/{filename}", requirements={"filename": R".*\.[^/]{3,4}"}, controller='view', action='index')
     ## match all directories, with and without trailing slash - i.e. the rest
