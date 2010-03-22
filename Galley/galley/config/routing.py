@@ -19,9 +19,14 @@ def make_map():
     map.connect('/error/{action}/{id}', controller='error')
 
     # CUSTOM ROUTES HERE
-
-    map.connect('/', controller='hello', action='index')
     map.connect('/{controller}/{action}')
     map.connect('/{controller}/{action}/{id}')
+    #map.connect("/{filename:.*.?}", controller='view', action='index')
+    # match all filenames for direct view
+    map.connect("/{filename}", requirements={"filename": R".*?"}, controller='view', action='index')
+    #map.connect("/{filename}", requirements={"filename": R".*\.[^/]{3,4}"}, controller='view', action='index')
+    ## match all directories, with and without trailing slash - i.e. the rest
+    #map.connect("/{path}", requirements={"path": R".*"}, controller='browse', action='index')
+    ##map.connect("/{path:.*?}", controller='browse', action='index')
 
     return map
