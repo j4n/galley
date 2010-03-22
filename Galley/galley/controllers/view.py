@@ -29,7 +29,9 @@ class ViewController(BaseController):
 		return "Directory: " + path
 
 	def render_file(self, filename):
-		return "Filename: " + filename
+		size = 700
+		return render('/image.mako', extra_vars={'name': size})
+		#return "Filename: " + filename
 
 	def render_raw_file(self, filename):
 		return self.render_image(filename)
